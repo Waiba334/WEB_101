@@ -1,3 +1,6 @@
+/* Import Google Fonts - Using a similar sans-serif font to Spotify's custom font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
 /* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
@@ -9,9 +12,6 @@
  * This file contains the base styling configuration for the Spotify clone application.
  * It includes CSS custom properties (variables) for consistent theming throughout the app.
  */
-
-/* Import Google Fonts - Using a similar sans-serif font to Spotify's custom font */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   /*
