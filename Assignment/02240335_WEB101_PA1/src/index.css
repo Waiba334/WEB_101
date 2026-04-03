@@ -1,0 +1,134 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
+/*
+ * Spotify Clone - Global Styles
+ * This file contains the base styling configuration for the Spotify clone application.
+ * It includes CSS custom properties (variables) for consistent theming throughout the app.
+ */
+
+/* Import Google Fonts - Using a similar sans-serif font to Spotify's custom font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /*
+   * Color Palette - Based on Spotify's actual color scheme
+   * These CSS variables allow for easy theme management and consistency
+   */
+  --spotify-green: #1DB954;      /* Primary brand color - used for buttons and accents */
+  --spotify-green-dark: #1aa34a; /* Darker green for hover states */
+  --spotify-black: #000000;      /* Pure black - sidebar background */
+  --spotify-dark: #121212;       /* Main background color */
+  --spotify-card: #181818;       /* Card/surface background */
+  --spotify-card-hover: #282828; /* Card hover state */
+  --spotify-light-gray: #b3b3b3; /* Secondary text color */
+  --spotify-white: #ffffff;      /* Primary text color */
+  --spotify-border: #282828;     /* Border color for dividers */
+}
+
+/*
+ * Base Element Styling
+ * Reset and configure fundamental HTML elements
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--spotify-dark);
+  color: var(--spotify-white);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+ * Custom Scrollbar Styling
+ * Matches Spotify's minimal scrollbar design
+ */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/*
+ * Utility Classes
+ * Custom utility classes for common patterns in the Spotify UI
+ */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/*
+ * Animation Utilities
+ * Smooth transitions for interactive elements
+ */
+.transition-colors-fast {
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.transition-transform-fast {
+  transition: transform 0.15s ease;
+}
+
+/*
+ * Focus States
+ * Accessible focus indicators
+ */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--spotify-green);
+  outline-offset: 2px;
+}
+
+/* Remove default link styling */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Remove default button styling */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
