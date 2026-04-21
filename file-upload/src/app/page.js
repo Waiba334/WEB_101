@@ -4,6 +4,7 @@ import { useState, useCallback } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios';
 import { useDropzone } from 'react-dropzone';
+import Image from 'next/image';
 
 export default function FileUploadForm() {
   // Validation constants
@@ -173,9 +174,11 @@ export default function FileUploadForm() {
             <h3 className="font-medium mb-1">Preview:</h3>
             <div className="border rounded p-2">
               {filePreview.type?.startsWith('image/') ? (
-                <img 
+                <Image 
                   src={filePreview.url} 
                   alt={filePreview.name} 
+                  width={400}
+                  height={160}
                   className="max-w-full h-auto max-h-40 rounded"
                 />
               ) : filePreview.type === 'application/pdf' ? (
